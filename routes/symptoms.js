@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Symptom = require('../models/Symptom');
-const auth = require('../middleware/auth');
+const { auth } = require('../middleware/auth');
 const logger = require('../utils/logger');
 const { validate, symptomValidationRules } = require('../middleware/validators/symptomValidator');
 const { successResponse, errorResponse } = require('../utils/responseFormatter');
@@ -36,11 +36,12 @@ const { successResponse, errorResponse } = require('../utils/responseFormatter')
  */
 router.get('/', auth, async (req, res) => {
   try {
-    const symptoms = await Symptom.find({ userId: req.userId });
+    const symptoms = await Symptom.find({ userId: req.userId })
+      .sort({ date: -1 });
     res.json(successResponse(symptoms, '증상 목록 조회 성공'));
   } catch (err) {
     logger.error('증상 조회 실패:', err);
-    res.status(500).json(errorResponse('증상 조회 실패', 500, err.message));
+    res.status(500).json(errorResponse('증상 조회 실패', 500));
   }
 });
 
@@ -91,7 +92,7 @@ router.get('/:id', auth, async (req, res) => {
     res.json(successResponse(symptom, '증상 조회 성공'));
   } catch (err) {
     logger.error('증상 조회 실패:', err);
-    res.status(500).json(errorResponse('증상 조회 실패', 500, err.message));
+    res.status(500).json(errorResponse('증상 조회 실패', 500));
   }
 });
 
@@ -132,11 +133,16 @@ router.get('/:id', auth, async (req, res) => {
  */
 router.get('/user/:userId', auth, async (req, res) => {
   try {
-    const symptoms = await Symptom.find({ userId: req.params.userId });
+    if (req.userId !== req.params.userId) {
+      return res.status(403).json(errorResponse('접근 권한이 없습니다', 403));
+    }
+
+    const symptoms = await Symptom.find({ userId: req.params.userId })
+      .sort({ date: -1 });
     res.json(successResponse(symptoms, '사용자 증상 목록 조회 성공'));
   } catch (err) {
     logger.error('증상 조회 실패:', err);
-    res.status(500).json(errorResponse('증상 조회 실패', 500, err.message));
+    res.status(500).json(errorResponse('증상 조회 실패', 500));
   }
 });
 
@@ -197,23 +203,33 @@ router.get('/user/:userId', auth, async (req, res) => {
  *         description: 잘못된 요청
  */
 router.post('/', auth, symptomValidationRules(), validate, async (req, res) => {
-  const symptom = new Symptom({
-    userId: req.userId,
-    category: req.body.category,
-    description: req.body.description,
-    severity: req.body.severity,
-    duration: req.body.duration,
-    notes: req.body.notes,
-    date: req.body.date || new Date()
-  });
-
   try {
+    const symptom = new Symptom({
+      userId: req.userId,
+      category: req.body.category,
+      description: req.body.description,
+      severity: req.body.severity,
+      duration: req.body.duration,
+      notes: req.body.notes,
+      date: req.body.date || new Date()
+    });
+
     const newSymptom = await symptom.save();
-    logger.info(`새로운 증상 기록: ${newSymptom._id}`);
-    res.status(201).json(successResponse(newSymptom, '증상 생성 성공', 201));
+    
+    logger.info('새로운 증상 기록:', {
+      id: newSymptom._id,
+      userId: req.userId,
+      category: newSymptom.category
+    });
+
+    res.status(201).json(successResponse(
+      newSymptom, 
+      '증상이 기록되었습니다', 
+      201
+    ));
   } catch (err) {
     logger.error('증상 생성 실패:', err);
-    res.status(400).json(errorResponse('증상 생성 실패', 400, err.message));
+    res.status(400).json(errorResponse('증상 생성 실패', 400));
   }
 });
 
