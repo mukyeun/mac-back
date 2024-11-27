@@ -1,24 +1,40 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+const { beforeAll, beforeEach, afterAll } = require('@jest/globals');
+const logger = require('../utils/logger');
 
-// JWT_SECRET이 없으면 테스트용 시크릿 설정
-process.env.JWT_SECRET = process.env.JWT_SECRET || 'test-secret-key';
+// 테스트 환경 설정
+process.env.NODE_ENV = 'test';
+process.env.JWT_SECRET = 'test-secret-key';
+process.env.MONGO_URI = 'mongodb://localhost:27017/macjin_test';
 
-// 테스트 데이터베이스 연결 설정
 beforeAll(async () => {
-  const url = process.env.TEST_MONGODB_URI || 'mongodb://localhost:27017/health-info-test';
-  await mongoose.connect(url);
-});
-
-// 각 테스트 후 데이터베이스 정리
-afterEach(async () => {
-  const collections = await mongoose.connection.db.collections();
-  for (let collection of collections) {
-    await collection.deleteMany({});
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log('Connected to MongoDB:', process.env.MONGO_URI);
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+    process.exit(1);
   }
 });
 
-// 모든 테스트 완료 후 연결 종료
-afterAll(async () => {
-  await mongoose.connection.close();
+beforeEach(async () => {
+  try {
+    await mongoose.connection.dropDatabase();
+    console.log('Database cleared');
+  } catch (error) {
+    console.error('Database cleanup error:', error);
+  }
 });
+
+afterAll(async () => {
+  try {
+    await mongoose.connection.close();
+    console.log('MongoDB connection closed');
+  } catch (error) {
+    console.error('MongoDB disconnect error:', error);
+  }
+});
+
+module.exports = {
+  MONGO_URI: process.env.MONGO_URI
+};

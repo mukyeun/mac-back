@@ -1,10 +1,39 @@
 const express = require('express');
 const router = express.Router();
 const Symptom = require('../models/Symptom');
-const { auth } = require('../middleware/auth');
-const logger = require('../utils/logger');
-const { validate, symptomValidationRules } = require('../middleware/validators/symptomValidator');
-const { successResponse, errorResponse } = require('../utils/responseFormatter');
+const auth = require('../middleware/auth');
+const logger = require('../config/logger');
+const { validate } = require('../middleware/validators');
+const { body } = require('express-validator');
+
+// 증상 유효성 검사 규칙 정의
+const symptomValidationRules = () => {
+  return [
+    body('category')
+      .notEmpty()
+      .withMessage('증상 카테고리는 필수입니다')
+      .isIn(['두통', '복통', '근육통', '기침', '기타'])
+      .withMessage('유효하지 않은 카테고리입니다'),
+    body('description')
+      .notEmpty()
+      .withMessage('증상 설명은 필수입니다')
+      .trim(),
+    body('severity')
+      .optional()
+      .isIn(['약함', '보통', '심함'])
+      .withMessage('유효하지 않은 심각도입니다'),
+    body('duration')
+      .optional()
+      .trim(),
+    body('notes')
+      .optional()
+      .trim(),
+    body('date')
+      .optional()
+      .isISO8601()
+      .withMessage('유효한 날짜 형식이 아닙니다')
+  ];
+};
 
 /**
  * @swagger
@@ -36,7 +65,7 @@ const { successResponse, errorResponse } = require('../utils/responseFormatter')
  */
 router.get('/', auth, async (req, res) => {
   try {
-    const symptoms = await Symptom.find({ userId: req.userId })
+    const symptoms = await Symptom.find({ userId: req.user.userId })
       .sort({ date: -1 });
     res.json(successResponse(symptoms, '증상 목록 조회 성공'));
   } catch (err) {
@@ -82,7 +111,7 @@ router.get('/:id', auth, async (req, res) => {
   try {
     const symptom = await Symptom.findOne({ 
       _id: req.params.id,
-      userId: req.userId 
+      userId: req.user.userId 
     });
     
     if (!symptom) {
@@ -133,7 +162,7 @@ router.get('/:id', auth, async (req, res) => {
  */
 router.get('/user/:userId', auth, async (req, res) => {
   try {
-    if (req.userId !== req.params.userId) {
+    if (req.user.userId !== req.params.userId) {
       return res.status(403).json(errorResponse('접근 권한이 없습니다', 403));
     }
 
@@ -205,7 +234,7 @@ router.get('/user/:userId', auth, async (req, res) => {
 router.post('/', auth, symptomValidationRules(), validate, async (req, res) => {
   try {
     const symptom = new Symptom({
-      userId: req.userId,
+      userId: req.user.userId,
       category: req.body.category,
       description: req.body.description,
       severity: req.body.severity,
@@ -218,7 +247,7 @@ router.post('/', auth, symptomValidationRules(), validate, async (req, res) => {
     
     logger.info('새로운 증상 기록:', {
       id: newSymptom._id,
-      userId: req.userId,
+      userId: req.user.userId,
       category: newSymptom.category
     });
 
@@ -276,7 +305,7 @@ router.put('/:id', auth, symptomValidationRules(), validate, async (req, res) =>
   try {
     const symptom = await Symptom.findOne({
       _id: req.params.id,
-      userId: req.userId
+      userId: req.user.userId
     });
 
     if (!symptom) {
@@ -334,7 +363,7 @@ router.delete('/:id', auth, async (req, res) => {
   try {
     const symptom = await Symptom.findOne({
       _id: req.params.id,
-      userId: req.userId
+      userId: req.user.userId
     });
 
     if (!symptom) {

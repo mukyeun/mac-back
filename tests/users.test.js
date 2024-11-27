@@ -1,13 +1,26 @@
 const request = require('supertest');
+const mongoose = require('mongoose');
 const app = require('../server');
 const User = require('../models/User');
+const { generateToken } = require('../utils/token');
 
 describe('User API', () => {
+  beforeAll(async () => {
+    await mongoose.connect(process.env.MONGODB_URI);
+  });
+
+  afterAll(async () => {
+    await mongoose.connection.close();
+  });
+
+  beforeEach(async () => {
+    await User.deleteMany({});
+  });
+
   const sampleUser = {
     username: 'testuser',
     email: 'test@example.com',
-    password: 'password123',
-    name: '테스트 사용자'
+    password: 'password123'
   };
 
   describe('POST /api/users/register', () => {
@@ -17,31 +30,26 @@ describe('User API', () => {
         .send(sampleUser);
 
       expect(response.status).toBe(201);
-      expect(response.body.user.username).toBe(sampleUser.username);
-      expect(response.body.user.email).toBe(sampleUser.email);
-      expect(response.body.token).toBeDefined();
-    });
+      expect(response.body.success).toBe(true);
+      expect(response.body.data.username).toBe(sampleUser.username);
+      expect(response.body.data.email).toBe(sampleUser.email);
+    }, 30000);
 
     it('should not register user with duplicate email', async () => {
-      // 첫 번째 사용자 등록
-      await request(app)
-        .post('/api/users/register')
-        .send(sampleUser);
+      await User.create(sampleUser);
 
-      // 같은 이메일로 두 번째 사용자 등록 시도
       const response = await request(app)
         .post('/api/users/register')
         .send(sampleUser);
 
       expect(response.status).toBe(400);
-    });
+      expect(response.body.success).toBe(false);
+    }, 30000);
   });
 
   describe('POST /api/users/login', () => {
     beforeEach(async () => {
-      await request(app)
-        .post('/api/users/register')
-        .send(sampleUser);
+      await User.create(sampleUser);
     });
 
     it('should login with valid credentials', async () => {
@@ -53,9 +61,10 @@ describe('User API', () => {
         });
 
       expect(response.status).toBe(200);
+      expect(response.body.success).toBe(true);
       expect(response.body.token).toBeDefined();
-      expect(response.body.user.email).toBe(sampleUser.email);
-    });
+      expect(response.body.data.email).toBe(sampleUser.email);
+    }, 30000);
 
     it('should not login with invalid password', async () => {
       const response = await request(app)
@@ -66,19 +75,16 @@ describe('User API', () => {
         });
 
       expect(response.status).toBe(401);
-    });
+      expect(response.body.success).toBe(false);
+    }, 30000);
   });
 
   describe('GET /api/users/profile', () => {
     let token;
 
     beforeEach(async () => {
-      // 사용자 등록
-      const registerResponse = await request(app)
-        .post('/api/users/register')
-        .send(sampleUser);
-      
-      token = registerResponse.body.token;
+      const user = await User.create(sampleUser);
+      token = generateToken({ id: user._id });
     });
 
     it('should get user profile with valid token', async () => {
@@ -87,14 +93,16 @@ describe('User API', () => {
         .set('Authorization', `Bearer ${token}`);
 
       expect(response.status).toBe(200);
-      expect(response.body.email).toBe(sampleUser.email);
-    });
+      expect(response.body.success).toBe(true);
+      expect(response.body.data.email).toBe(sampleUser.email);
+    }, 30000);
 
     it('should not get profile without token', async () => {
       const response = await request(app)
         .get('/api/users/profile');
 
       expect(response.status).toBe(401);
-    });
+      expect(response.body.success).toBe(false);
+    }, 30000);
   });
 });

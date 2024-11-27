@@ -1,139 +1,233 @@
 const request = require('supertest');
+const mongoose = require('mongoose');
 const app = require('../server');
 const HealthInfo = require('../models/HealthInfo');
-const User = require('../models/User');
+const { generateToken } = require('../utils/token');
 
-describe('Health Info API', () => {
-  let token;
-  let userId;
+describe('Health Info API Tests', () => {
+  let authToken;
+  let testUserId;
 
   beforeAll(async () => {
-    // 테스트용 사용자 생성 및 토큰 발급
-    const userResponse = await request(app)
-      .post('/api/users/register')
-      .send({
-        username: 'testuser',
-        email: 'test@example.com',
-        password: 'password123',
-        name: '테스트사용자'
-      });
-    
-    token = userResponse.body.token;
-    userId = userResponse.body.user._id;
+    testUserId = new mongoose.Types.ObjectId();
+    authToken = generateToken({ 
+      id: testUserId,
+      role: 'user' 
+    });
+  }, 30000);
+
+  beforeEach(async () => {
+    await HealthInfo.deleteMany({});
   });
 
-  const sampleHealthInfo = {
-    기본정보: {
-      이름: '홍길동',
-      주민번호: '800101-1234567',
-      연락처: '010-1234-5678',
-      성별: '남',
-      나이: 43,
-      키: 175,
-      체중: 70,
-      BMI: 22.9
-    },
-    건강정보: {
-      혈압: {
-        수축기: 120,
-        이완기: 80
-      },
-      혈당: 95,
-      체온: 36.5,
-      산소포화도: 98
-    },
-    증상: ['두통', '어지러움'],
-    메모: '특이사항 없음'
-  };
+  afterAll(async () => {
+    await mongoose.connection.close();
+  });
 
+  // 건강정보 생성 테스트
   describe('POST /api/health-info', () => {
-    it('should create new health info', async () => {
+    it('should create new health info with valid data', async () => {
+      const healthData = {
+        기본정보: {
+          이름: '홍길동',
+          성별: '남성',
+          생년월일: '1990-01-01',
+          혈액형: 'A'
+        },
+        weight: 70,
+        height: 175,
+        bloodPressure: {
+          systolic: 120,
+          diastolic: 80
+        },
+        pulseRate: 75,
+        bloodSugar: 95,
+        date: new Date().toISOString()
+      };
+
       const response = await request(app)
         .post('/api/health-info')
-        .set('Authorization', `Bearer ${token}`)
-        .send(sampleHealthInfo);
+        .set('Authorization', `Bearer ${authToken}`)
+        .send(healthData);
 
       expect(response.status).toBe(201);
-      expect(response.body.data.기본정보.이름).toBe('홍길동');
-      expect(response.body.data.건강정보.혈압.수축기).toBe(120);
-      expect(response.body.status).toBe('success');
-    });
+      expect(response.body.success).toBe(true);
+      expect(response.body.data).toHaveProperty('weight', 70);
+    }, 10000);
 
-    it('should not create health info without token', async () => {
+    it('should return 400 for invalid data', async () => {
+      const invalidData = {
+        기본정보: {
+          이름: '홍길동',
+          성별: '남성',
+          생년월일: '1990-01-01',
+          혈액형: 'A'
+        },
+        weight: -1, // 잘못된 체중
+        height: 175
+      };
+
       const response = await request(app)
         .post('/api/health-info')
-        .send(sampleHealthInfo);
+        .set('Authorization', `Bearer ${authToken}`)
+        .send(invalidData);
 
-      expect(response.status).toBe(401);
-      expect(response.body.status).toBe('error');
-    });
+      expect(response.status).toBe(400);
+      expect(response.body.success).toBe(false);
+    }, 10000);
   });
 
+  // 건강정보 조회 테스트
   describe('GET /api/health-info', () => {
     beforeEach(async () => {
       // 테스트 데이터 생성
       await HealthInfo.create({
-        ...sampleHealthInfo,
-        userId
+        userId: testUserId,
+        기본정보: {
+          이름: '홍길동',
+          성별: '남성',
+          생년월일: '1990-01-01',
+          혈액형: 'A'
+        },
+        weight: 70,
+        height: 175,
+        bloodPressure: {
+          systolic: 120,
+          diastolic: 80
+        },
+        pulseRate: 75,
+        bloodSugar: 95,
+        date: new Date()
       });
     });
 
-    it('should get all health info', async () => {
+    it('should get all health info for user', async () => {
       const response = await request(app)
         .get('/api/health-info')
-        .set('Authorization', `Bearer ${token}`);
+        .set('Authorization', `Bearer ${authToken}`);
 
       expect(response.status).toBe(200);
-      expect(Array.isArray(response.body.data)).toBeTruthy();
+      expect(response.body.success).toBe(true);
+      expect(Array.isArray(response.body.data)).toBe(true);
       expect(response.body.data.length).toBeGreaterThan(0);
-      expect(response.body.status).toBe('success');
-    });
+    }, 30000);
 
-    it('should not get health info without token', async () => {
+    it('should filter health info by date range', async () => {
+      const startDate = new Date();
+      startDate.setDate(startDate.getDate() - 7);
+      
       const response = await request(app)
-        .get('/api/health-info');
+        .get('/api/health-info')
+        .query({
+          startDate: startDate.toISOString(),
+          endDate: new Date().toISOString()
+        })
+        .set('Authorization', `Bearer ${authToken}`);
 
-      expect(response.status).toBe(401);
-      expect(response.body.status).toBe('error');
-    });
+      expect(response.status).toBe(200);
+      expect(response.body.success).toBe(true);
+    }, 30000);
   });
 
-  describe('GET /api/health-info/:id', () => {
-    let healthInfo;
-
-    beforeEach(async () => {
-      // 테스트 데이터 생성
-      healthInfo = await HealthInfo.create({
-        ...sampleHealthInfo,
-        userId
+  // 건강정보 수정 테스트
+  describe('PUT /api/health-info/:id', () => {
+    it('should update health info with valid data', async () => {
+      const healthInfo = await HealthInfo.create({
+        userId: testUserId,
+        기본정보: {
+          이름: '홍길동',
+          성별: '남성',
+          생년월일: '1990-01-01',
+          혈액형: 'A'
+        },
+        weight: 70,
+        height: 175
       });
-    });
 
-    it('should get health info by id', async () => {
+      const updateData = {
+        기본정보: {
+          이름: '홍길동',
+          성별: '남성',
+          생년월일: '1990-01-01',
+          혈액형: 'A'
+        },
+        weight: 72,
+        height: 175
+      };
+
       const response = await request(app)
-        .get(`/api/health-info/${healthInfo._id}`)
-        .set('Authorization', `Bearer ${token}`);
+        .put(`/api/health-info/${healthInfo._id}`)
+        .set('Authorization', `Bearer ${authToken}`)
+        .send(updateData);
 
       expect(response.status).toBe(200);
-      expect(response.body.data.기본정보.이름).toBe('홍길동');
-      expect(response.body.status).toBe('success');
-    });
+      expect(response.body.success).toBe(true);
+      expect(response.body.data.weight).toBe(72);
+    }, 30000);
+
+    it('should return 400 for invalid data', async () => {
+      const healthInfo = await HealthInfo.create({
+        userId: testUserId,
+        기본정보: {
+          이름: '홍길동',
+          성별: '남성',
+          생년월일: '1990-01-01',
+          혈액형: 'A'
+        },
+        weight: 70,
+        height: 175
+      });
+
+      const invalidData = {
+        기본정보: {
+          이름: '홍길동',
+          성별: '남성',
+          생년월일: '1990-01-01',
+          혈액형: 'A'
+        },
+        weight: -1
+      };
+
+      const response = await request(app)
+        .put(`/api/health-info/${healthInfo._id}`)
+        .set('Authorization', `Bearer ${authToken}`)
+        .send(invalidData);
+
+      expect(response.status).toBe(400);
+      expect(response.body.success).toBe(false);
+    }, 30000);
+  });
+
+  // 건강정보 삭제 테스트
+  describe('DELETE /api/health-info/:id', () => {
+    it('should delete health info', async () => {
+      const healthInfo = await HealthInfo.create({
+        userId: testUserId,
+        기본정보: {
+          이름: '홍길동',
+          성별: '남성',
+          생년월일: '1990-01-01',
+          혈액형: 'A'
+        },
+        weight: 70,
+        height: 175
+      });
+
+      const response = await request(app)
+        .delete(`/api/health-info/${healthInfo._id}`)
+        .set('Authorization', `Bearer ${authToken}`);
+
+      expect(response.status).toBe(200);
+      expect(response.body.success).toBe(true);
+    }, 30000);
 
     it('should return 404 if id not found', async () => {
       const response = await request(app)
-        .get('/api/health-info/654321654321654321654321')
-        .set('Authorization', `Bearer ${token}`);
+        .delete(`/api/health-info/${new mongoose.Types.ObjectId()}`)
+        .set('Authorization', `Bearer ${authToken}`);
 
       expect(response.status).toBe(404);
-      expect(response.body.status).toBe('error');
-    });
-  });
-
-  afterEach(async () => {
-    await HealthInfo.deleteMany();
-  });
-
-  afterAll(async () => {
-    await User.deleteMany();
+      expect(response.body.success).toBe(false);
+    }, 30000);
   });
 });

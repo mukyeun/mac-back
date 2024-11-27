@@ -1,30 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const { auth } = require('../middleware/auth');
+const auth = require('../middleware/auth');
+const logger = require('../config/logger');
 const HealthInfo = require('../models/HealthInfo');
-const {
-  validate,
-  healthInfoValidationRules,
+const { 
+  healthInfoValidationRules, 
   paginationRules,
   idParamRules,
-  multipleDeleteRules
-} = require('../middleware/validators/healthInfoValidator');
-const logger = require('../utils/logger');
-const { successResponse, errorResponse } = require('../utils/responseFormatter');
-const Excel = require('exceljs');
+  multipleDeleteRules,
+  validate 
+} = require('../middleware/validators');
 
-// 의존성 체크
-if (!auth || typeof auth !== 'function') {
-  logger.error('Auth middleware not properly loaded', {
-    authType: typeof auth
-  });
-  throw new Error('Auth middleware configuration error');
-}
-
-// 디버깅을 위한 초기 로그
+// 미들웨어 로드 확인
 logger.info('Health Info Router loaded', {
   authType: typeof auth,
-  healthInfo: !!HealthInfo,
+  healthInfo: true,
   validators: {
     validate: !!validate,
     healthInfoValidationRules: !!healthInfoValidationRules,
@@ -121,7 +111,7 @@ router.get('/export', auth, async (req, res) => {
 });
 
 // 여러 건강정보 삭제
-router.post('/multiple-delete', 
+router.post('/multiple-delete',
   auth,
   multipleDeleteRules(),
   validate,
@@ -274,7 +264,16 @@ router.get('/:id',
         ));
       }
 
-      res.json(successResponse({ healthInfo }));
+      logger.info('Health info retrieved', {
+        id: healthInfo._id,
+        userId: req.userId,
+        name: healthInfo.기본정보?.이름
+      });
+
+      res.json(successResponse(
+        { healthInfo },
+        '건강정보를 조회했습니다'
+      ));
     } catch (error) {
       logger.error('Get health info error:', error);
       res.status(500).json(errorResponse(
