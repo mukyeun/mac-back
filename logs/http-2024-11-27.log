@@ -1,0 +1,365 @@
+2024-11-27 09:43:18 [WARN]: Validation failed: {
+  "path": "/profile",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "value": "invalid@username",
+      "msg": "사용자명은 영문, 숫자, 언더스코어만 사용할 수 있습니다",
+      "path": "username",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 09:43:18 [WARN]: Validation failed: {
+  "path": "/profile",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "value": "A",
+      "msg": "이름은 2-50자 사이여야 합니다",
+      "path": "name",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 09:43:19 [WARN]: Authentication failed: No token provided 
+2024-11-27 09:43:20 [ERROR]: jwt expired {
+  "name": "TokenExpiredError",
+  "expiredAt": "2024-11-27T00:43:19.000Z",
+  "stack": "TokenExpiredError: jwt expired\n    at D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:190:21\n    at getSecret (D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:97:14)\n    at Object.<anonymous>.module.exports [as verify] (D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:101:10)\n    at verify (D:\\Macjin\\backend\\middleware\\auth.js:20:25)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at urlencodedParser (D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\types\\urlencoded.js:85:7)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\read.js:137:5\n    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)\n    at invokeCallback (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2024-11-27 09:43:20 [ERROR]: invalid token {
+  "name": "JsonWebTokenError",
+  "stack": "JsonWebTokenError: invalid token\n    at Object.<anonymous>.module.exports [as verify] (D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:82:17)\n    at verify (D:\\Macjin\\backend\\middleware\\auth.js:20:25)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at urlencodedParser (D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\types\\urlencoded.js:85:7)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\read.js:137:5\n    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)\n    at invokeCallback (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2024-11-27 09:44:47 [WARN]: Validation failed: {
+  "path": "/profile",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "value": "invalid@username",
+      "msg": "사용자명은 영문, 숫자, 언더스코어만 사용할 수 있습니다",
+      "path": "username",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 09:44:47 [WARN]: Validation failed: {
+  "path": "/profile",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "value": "A",
+      "msg": "이름은 2-50자 사이여야 합니다",
+      "path": "name",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 09:44:47 [WARN]: Authentication failed: No token provided 
+2024-11-27 09:44:49 [ERROR]: jwt expired {
+  "name": "TokenExpiredError",
+  "expiredAt": "2024-11-27T00:44:47.000Z",
+  "stack": "TokenExpiredError: jwt expired\n    at D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:190:21\n    at getSecret (D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:97:14)\n    at Object.<anonymous>.module.exports [as verify] (D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:101:10)\n    at verify (D:\\Macjin\\backend\\middleware\\auth.js:20:25)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at urlencodedParser (D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\types\\urlencoded.js:85:7)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\read.js:137:5\n    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)\n    at invokeCallback (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2024-11-27 09:44:49 [ERROR]: invalid token {
+  "name": "JsonWebTokenError",
+  "stack": "JsonWebTokenError: invalid token\n    at Object.<anonymous>.module.exports [as verify] (D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:82:17)\n    at verify (D:\\Macjin\\backend\\middleware\\auth.js:20:25)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at urlencodedParser (D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\types\\urlencoded.js:85:7)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\read.js:137:5\n    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)\n    at invokeCallback (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2024-11-27 09:46:08 [WARN]: Validation failed: {
+  "path": "/profile",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "value": "existinguser",
+      "msg": "이미 사용 중인 사용자명입니다",
+      "path": "username",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 09:46:08 [WARN]: Validation failed: {
+  "path": "/profile",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "value": "invalid@username",
+      "msg": "사용자명은 영문, 숫자, 언더스코어만 사용할 수 있습니다",
+      "path": "username",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 09:46:08 [WARN]: Validation failed: {
+  "path": "/profile",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "value": "A",
+      "msg": "이름은 2-50자 사이여야 합니다",
+      "path": "name",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 09:46:09 [WARN]: Authentication failed: No token provided 
+2024-11-27 09:46:10 [ERROR]: jwt expired {
+  "name": "TokenExpiredError",
+  "expiredAt": "2024-11-27T00:46:09.000Z",
+  "stack": "TokenExpiredError: jwt expired\n    at D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:190:21\n    at getSecret (D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:97:14)\n    at Object.<anonymous>.module.exports [as verify] (D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:101:10)\n    at verify (D:\\Macjin\\backend\\middleware\\auth.js:20:25)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at urlencodedParser (D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\types\\urlencoded.js:85:7)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\read.js:137:5\n    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)\n    at invokeCallback (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2024-11-27 09:46:10 [ERROR]: invalid token {
+  "name": "JsonWebTokenError",
+  "stack": "JsonWebTokenError: invalid token\n    at Object.<anonymous>.module.exports [as verify] (D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:82:17)\n    at verify (D:\\Macjin\\backend\\middleware\\auth.js:20:25)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at urlencodedParser (D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\types\\urlencoded.js:85:7)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\read.js:137:5\n    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)\n    at invokeCallback (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2024-11-27 10:03:46 [ERROR]: Server error: {
+  "error": "지원하지 않는 파일 형식입니다"
+}
+2024-11-27 10:03:46 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:03:46 [ERROR]: Server error: {
+  "error": "File too large"
+}
+2024-11-27 10:05:00 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:06:24 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:07:40 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:09:09 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:10:08 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:11:24 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:12:21 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:13:13 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:17:36 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:19:52 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:19:52 [WARN]: Validation failed: {
+  "path": "/profile",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "value": "",
+      "msg": "이름은 2-50자 사이여야 합니다",
+      "path": "name",
+      "location": "body"
+    },
+    {
+      "type": "field",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "msg": "자기소개는 500자를 초과할 수 없습니다",
+      "path": "bio",
+      "location": "body"
+    },
+    {
+      "type": "field",
+      "value": "invalid-date",
+      "msg": "올바른 날짜 형식이 아닙니다",
+      "path": "birthDate",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 10:20:40 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:20:40 [WARN]: Validation failed: {
+  "path": "/profile",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "value": "",
+      "msg": "이름은 2-50자 사이여야 합니다",
+      "path": "name",
+      "location": "body"
+    },
+    {
+      "type": "field",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "msg": "자기소개는 500자를 초과할 수 없습니다",
+      "path": "bio",
+      "location": "body"
+    },
+    {
+      "type": "field",
+      "value": "invalid-date",
+      "msg": "올바른 날짜 형식이 아닙니다",
+      "path": "birthDate",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 10:23:03 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:23:03 [WARN]: Validation failed: {
+  "path": "/profile/privacy",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "value": "invalid",
+      "msg": "공개 여부는 불리언 값이어야 합니다",
+      "path": "isPublic",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 10:29:18 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:29:19 [WARN]: Validation failed: {
+  "path": "/",
+  "method": "POST",
+  "errors": [
+    {
+      "type": "field",
+      "msg": "올바른 날짜 형식이 아닙니다",
+      "path": "date",
+      "location": "body"
+    },
+    {
+      "type": "field",
+      "msg": "신장은 0-300cm 사이여야 합니다",
+      "path": "height",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 10:31:36 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:33:37 [WARN]: Validation failed: {
+  "path": "/2024-01-01",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "msg": "올바른 날짜 형식이 아닙니다",
+      "path": "date",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 10:33:37 [WARN]: Validation failed: {
+  "path": "/2024-12-31",
+  "method": "PUT",
+  "errors": [
+    {
+      "type": "field",
+      "msg": "올바른 날짜 형식이 아닙니다",
+      "path": "date",
+      "location": "body"
+    },
+    {
+      "type": "field",
+      "msg": "신장은 0-300cm 사이여야 합니다",
+      "path": "height",
+      "location": "body"
+    }
+  ]
+}
+2024-11-27 10:42:55 [WARN]: Validation failed: {
+  "path": "/weight",
+  "method": "GET",
+  "errors": [
+    {
+      "type": "field",
+      "value": "2023-12-31",
+      "msg": "종료일은 시작일보다 이후여야 합니다",
+      "path": "endDate",
+      "location": "query"
+    }
+  ]
+}
+2024-11-27 10:43:47 [WARN]: Validation failed: {
+  "path": "/weight",
+  "method": "GET",
+  "errors": [
+    {
+      "type": "field",
+      "value": "2023-12-31",
+      "msg": "종료일은 시작일보다 이후여야 합니다",
+      "path": "endDate",
+      "location": "query"
+    }
+  ]
+}
+2024-11-27 10:46:58 [WARN]: Validation failed: {
+  "path": "/export",
+  "method": "GET",
+  "errors": [
+    {
+      "type": "field",
+      "value": "export",
+      "msg": "올바른 날짜 형식이 아닙니다",
+      "path": "date",
+      "location": "params"
+    }
+  ]
+}
+2024-11-27 10:46:58 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:46:59 [WARN]: Validation failed: {
+  "path": "/export",
+  "method": "GET",
+  "errors": [
+    {
+      "type": "field",
+      "value": "export",
+      "msg": "올바른 날짜 형식이 아닙니다",
+      "path": "date",
+      "location": "params"
+    }
+  ]
+}
+2024-11-27 10:46:59 [WARN]: Validation failed: {
+  "path": "/export",
+  "method": "GET",
+  "errors": [
+    {
+      "type": "field",
+      "value": "export",
+      "msg": "올바른 날짜 형식이 아닙니다",
+      "path": "date",
+      "location": "params"
+    }
+  ]
+}
+2024-11-27 10:48:05 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:48:05 [WARN]: Validation failed: {
+  "path": "/",
+  "method": "GET",
+  "errors": [
+    {
+      "type": "field",
+      "value": "2023-12-31",
+      "msg": "종료일은 시작일보다 이후여야 합니다",
+      "path": "endDate",
+      "location": "query"
+    }
+  ]
+}
+2024-11-27 10:49:02 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:49:02 [WARN]: Validation failed: {
+  "path": "/",
+  "method": "GET",
+  "errors": [
+    {
+      "type": "field",
+      "value": "2023-12-31",
+      "msg": "종료일은 시작일보다 이후여야 합니다",
+      "path": "endDate",
+      "location": "query"
+    }
+  ]
+}
+2024-11-27 10:49:49 [WARN]: Authentication failed: No token provided 
+2024-11-27 10:49:49 [WARN]: Validation failed: {
+  "path": "/",
+  "method": "GET",
+  "errors": [
+    {
+      "type": "field",
+      "value": "2023-12-31",
+      "msg": "종료일은 시작일보다 이후여야 합니다",
+      "path": "endDate",
+      "location": "query"
+    }
+  ]
+}
