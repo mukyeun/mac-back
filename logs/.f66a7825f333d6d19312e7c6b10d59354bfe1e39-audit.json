@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\Macjin\\logs\\.f66a7825f333d6d19312e7c6b10d59354bfe1e39-audit.json",
+    "files": [
+        {
+            "date": 1732583398565,
+            "name": "D:\\Macjin\\logs\\combined-2024-11-26.log",
+            "hash": "461bfe5c88e1208c21abc8a59792de8ee9e04a9a32144f06e1d32c6539d5ad4f"
+        }
+    ],
+    "hashType": "sha256"
+}

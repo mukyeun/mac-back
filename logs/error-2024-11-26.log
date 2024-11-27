@@ -1,0 +1,301 @@
+2024-11-26 10:12:04 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/",
+  "method": "POST",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:12:04 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/",
+  "method": "POST",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:12:04 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/",
+  "method": "GET",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:12:04 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/",
+  "method": "POST",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:12:04 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/",
+  "method": "POST",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:12:04 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/undefined",
+  "method": "GET",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:12:05 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/",
+  "method": "POST",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:12:05 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/654321654321654321654321",
+  "method": "GET",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:12:05 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/profile",
+  "method": "GET",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:14:52 [ERROR]: 증상 생성 실패: Symptom validation failed: userId: Path `userId` is required. {
+  "errors": {
+    "userId": {
+      "name": "ValidatorError",
+      "message": "Path `userId` is required.",
+      "properties": {
+        "message": "Path `userId` is required.",
+        "type": "required",
+        "path": "userId"
+      },
+      "kind": "required",
+      "path": "userId"
+    }
+  },
+  "_message": "Symptom validation failed",
+  "stack": "ValidationError: Symptom validation failed: userId: Path `userId` is required.\n    at model.Object.<anonymous>.Document.invalidate (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3318:32)\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3079:17\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n    at processTicksAndRejections (node:internal/process/task_queues:85:11)"
+}
+2024-11-26 10:14:52 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/profile",
+  "method": "GET",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:17:45 [ERROR]: 증상 생성 실패: Symptom validation failed: userId: Path `userId` is required. {
+  "errors": {
+    "userId": {
+      "name": "ValidatorError",
+      "message": "Path `userId` is required.",
+      "properties": {
+        "message": "Path `userId` is required.",
+        "type": "required",
+        "path": "userId"
+      },
+      "kind": "required",
+      "path": "userId"
+    }
+  },
+  "_message": "Symptom validation failed",
+  "stack": "ValidationError: Symptom validation failed: userId: Path `userId` is required.\n    at model.Object.<anonymous>.Document.invalidate (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3318:32)\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3079:17\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n    at processTicksAndRejections (node:internal/process/task_queues:85:11)"
+}
+2024-11-26 10:17:46 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/profile",
+  "method": "GET",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:19:54 [ERROR]: 증상 생성 실패: Symptom validation failed: userId: Path `userId` is required. {
+  "errors": {
+    "userId": {
+      "name": "ValidatorError",
+      "message": "Path `userId` is required.",
+      "properties": {
+        "message": "Path `userId` is required.",
+        "type": "required",
+        "path": "userId"
+      },
+      "kind": "required",
+      "path": "userId"
+    }
+  },
+  "_message": "Symptom validation failed",
+  "stack": "ValidationError: Symptom validation failed: userId: Path `userId` is required.\n    at model.Object.<anonymous>.Document.invalidate (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3318:32)\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3079:17\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n    at processTicksAndRejections (node:internal/process/task_queues:85:11)"
+}
+2024-11-26 10:19:54 [ERROR]: Token verification failed: {
+  "error": "jwt malformed",
+  "path": "/profile",
+  "method": "GET",
+  "ip": "::ffff:127.0.0.1"
+}
+2024-11-26 10:25:02 [ERROR]: 증상 생성 실패: Symptom validation failed: userId: Path `userId` is required. {
+  "errors": {
+    "userId": {
+      "name": "ValidatorError",
+      "message": "Path `userId` is required.",
+      "properties": {
+        "message": "Path `userId` is required.",
+        "type": "required",
+        "path": "userId"
+      },
+      "kind": "required",
+      "path": "userId"
+    }
+  },
+  "_message": "Symptom validation failed",
+  "stack": "ValidationError: Symptom validation failed: userId: Path `userId` is required.\n    at model.Object.<anonymous>.Document.invalidate (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3318:32)\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3079:17\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n    at processTicksAndRejections (node:internal/process/task_queues:85:11)"
+}
+2024-11-26 10:27:23 [ERROR]: 증상 생성 실패: Symptom validation failed: userId: Path `userId` is required. {
+  "errors": {
+    "userId": {
+      "name": "ValidatorError",
+      "message": "Path `userId` is required.",
+      "properties": {
+        "message": "Path `userId` is required.",
+        "type": "required",
+        "path": "userId"
+      },
+      "kind": "required",
+      "path": "userId"
+    }
+  },
+  "_message": "Symptom validation failed",
+  "stack": "ValidationError: Symptom validation failed: userId: Path `userId` is required.\n    at model.Object.<anonymous>.Document.invalidate (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3318:32)\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3079:17\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n    at processTicksAndRejections (node:internal/process/task_queues:85:11)"
+}
+2024-11-26 10:30:44 [ERROR]: 증상 생성 실패: Symptom validation failed: userId: Path `userId` is required. {
+  "errors": {
+    "userId": {
+      "name": "ValidatorError",
+      "message": "Path `userId` is required.",
+      "properties": {
+        "message": "Path `userId` is required.",
+        "type": "required",
+        "path": "userId"
+      },
+      "kind": "required",
+      "path": "userId"
+    }
+  },
+  "_message": "Symptom validation failed",
+  "stack": "ValidationError: Symptom validation failed: userId: Path `userId` is required.\n    at model.Object.<anonymous>.Document.invalidate (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3318:32)\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3079:17\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n    at processTicksAndRejections (node:internal/process/task_queues:85:11)"
+}
+2024-11-26 10:36:39 [ERROR]: 증상 생성 실패: Symptom validation failed: userId: Path `userId` is required. {
+  "errors": {
+    "userId": {
+      "name": "ValidatorError",
+      "message": "Path `userId` is required.",
+      "properties": {
+        "message": "Path `userId` is required.",
+        "type": "required",
+        "path": "userId"
+      },
+      "kind": "required",
+      "path": "userId"
+    }
+  },
+  "_message": "Symptom validation failed",
+  "stack": "ValidationError: Symptom validation failed: userId: Path `userId` is required.\n    at model.Object.<anonymous>.Document.invalidate (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3318:32)\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\document.js:3079:17\n    at D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n    at processTicksAndRejections (node:internal/process/task_queues:85:11)"
+}
+2024-11-26 14:05:40 [ERROR]: Auth middleware not properly loaded {
+  "authType": "undefined"
+}
+2024-11-26 14:06:02 [ERROR]: Auth middleware not properly loaded {
+  "authType": "undefined"
+}
+2024-11-26 15:00:24 [ERROR]: Setup failed: Can't call `openUri()` on an active connection with different connection strings. Make sure you aren't calling `mongoose.connect()` multiple times. See: https://mongoosejs.com/docs/connections.html#multiple_connections {
+  "stack": "MongooseError: Can't call `openUri()` on an active connection with different connection strings. Make sure you aren't calling `mongoose.connect()` multiple times. See: https://mongoosejs.com/docs/connections.html#multiple_connections\n    at NativeConnection.createClient (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:239:13)\n    at NativeConnection.openUri (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\connection.js:835:34)\n    at Mongoose.connect (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\mongoose.js:447:15)\n    at Object.connect (D:\\Macjin\\backend\\tests\\security.test.js:18:22)\n    at Promise.then.completed (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:298:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:231:10)\n    at _callCircusHook (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:281:40)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:95:7)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at run (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:71:3)\n    at runAndTransformResultsToJestFormat (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:122:21)\n    at jestAdapter (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:79:19)\n    at runTestInternal (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:367:16)\n    at runTest (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:444:34)"
+}
+2024-11-26 15:00:24 [ERROR]: MongoDB error: Can't call `openUri()` on an active connection with different connection strings. Make sure you aren't calling `mongoose.connect()` multiple times. See: https://mongoosejs.com/docs/connections.html#multiple_connections {
+  "stack": "MongooseError: Can't call `openUri()` on an active connection with different connection strings. Make sure you aren't calling `mongoose.connect()` multiple times. See: https://mongoosejs.com/docs/connections.html#multiple_connections\n    at NativeConnection.createClient (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:239:13)\n    at NativeConnection.openUri (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\connection.js:835:34)\n    at Mongoose.connect (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\mongoose.js:447:15)\n    at Object.connect (D:\\Macjin\\backend\\tests\\security.test.js:18:22)\n    at Promise.then.completed (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:298:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:231:10)\n    at _callCircusHook (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:281:40)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:95:7)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at run (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:71:3)\n    at runAndTransformResultsToJestFormat (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:122:21)\n    at jestAdapter (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:79:19)\n    at runTestInternal (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:367:16)\n    at runTest (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:444:34)"
+}
+2024-11-26 15:02:46 [ERROR]: Setup failed: options keepalive, keepaliveinitialdelay are not supported {
+  "stack": "MongoParseError: options keepalive, keepaliveinitialdelay are not supported\n    at parseOptions (D:\\Macjin\\backend\\node_modules\\mongodb\\src\\connection_string.ts:367:11)\n    at new MongoClient (D:\\Macjin\\backend\\node_modules\\mongodb\\src\\mongo_client.ts:374:34)\n    at NativeConnection.createClient (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:312:14)\n    at NativeConnection.openUri (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\connection.js:835:34)\n    at Mongoose.connect (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\mongoose.js:447:15)\n    at Object.connect (D:\\Macjin\\backend\\tests\\security.test.js:32:22)"
+}
+2024-11-26 15:02:46 [ERROR]: MongoDB error: options keepalive, keepaliveinitialdelay are not supported {
+  "stack": "MongoParseError: options keepalive, keepaliveinitialdelay are not supported\n    at parseOptions (D:\\Macjin\\backend\\node_modules\\mongodb\\src\\connection_string.ts:367:11)\n    at new MongoClient (D:\\Macjin\\backend\\node_modules\\mongodb\\src\\mongo_client.ts:374:34)\n    at NativeConnection.createClient (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:312:14)\n    at NativeConnection.openUri (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\connection.js:835:34)\n    at Mongoose.connect (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\mongoose.js:447:15)\n    at Object.connect (D:\\Macjin\\backend\\tests\\security.test.js:32:22)"
+}
+2024-11-26 15:18:10 [ERROR]: Registration error: 이미 등록된 이메일입니다. {
+  "stack": "Error: 이미 등록된 이메일입니다.\n    at register (D:\\Macjin\\backend\\controllers\\userController.js:17:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at D:\\Macjin\\backend\\routes\\users.js:36:20"
+}
+2024-11-26 15:18:10 [ERROR]: Registration failed: 이미 등록된 이메일입니다. {
+  "stack": "Error: 이미 등록된 이메일입니다.\n    at register (D:\\Macjin\\backend\\controllers\\userController.js:17:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at D:\\Macjin\\backend\\routes\\users.js:36:20"
+}
+2024-11-26 15:18:50 [ERROR]: Registration error: 이미 등록된 이메일입니다. {
+  "stack": "Error: 이미 등록된 이메일입니다.\n    at register (D:\\Macjin\\backend\\controllers\\userController.js:17:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at D:\\Macjin\\backend\\routes\\users.js:36:20"
+}
+2024-11-26 15:18:50 [ERROR]: Registration failed: 이미 등록된 이메일입니다. {
+  "stack": "Error: 이미 등록된 이메일입니다.\n    at register (D:\\Macjin\\backend\\controllers\\userController.js:17:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at D:\\Macjin\\backend\\routes\\users.js:36:20"
+}
+2024-11-26 15:22:24 [ERROR]: Login error: 이메일 또는 비밀번호가 올바르지 않습니다. {
+  "stack": "Error: 이메일 또는 비밀번호가 올바르지 않습니다.\n    at login (D:\\Macjin\\backend\\controllers\\userController.js:74:13)\n    at D:\\Macjin\\backend\\routes\\users.js:73:20"
+}
+2024-11-26 15:23:12 [ERROR]: Login error: 이메일 또는 비밀번호가 올바르지 않습니다. {
+  "stack": "Error: 이메일 또는 비밀번호가 올바르지 않습니다.\n    at login (D:\\Macjin\\backend\\controllers\\userController.js:74:13)\n    at D:\\Macjin\\backend\\routes\\users.js:77:20"
+}
+2024-11-26 15:23:12 [ERROR]: Login error: 이메일 또는 비밀번호가 올바르지 않습니다. {
+  "stack": "Error: 이메일 또는 비밀번호가 올바르지 않습니다.\n    at login (D:\\Macjin\\backend\\controllers\\userController.js:74:13)\n    at D:\\Macjin\\backend\\routes\\users.js:77:20"
+}
+2024-11-26 15:36:06 [ERROR]: Login error: 이메일 또는 비밀번호가 올바르지 않습니다. {
+  "stack": "Error: 이메일 또는 비밀번호가 올바르지 않습니다.\n    at login (D:\\Macjin\\backend\\controllers\\userController.js:74:11)\n    at D:\\Macjin\\backend\\routes\\users.js:77:20"
+}
+2024-11-26 15:36:52 [ERROR]: Login error: 이메일 또는 비밀번호가 올바르지 않습니다. {
+  "stack": "Error: 이메일 또는 비밀번호가 올바르지 않습니다.\n    at login (D:\\Macjin\\backend\\controllers\\userController.js:74:11)\n    at D:\\Macjin\\backend\\routes\\users.js:77:20"
+}
+2024-11-26 15:37:51 [ERROR]: Login error: 이메일 또는 비밀번호가 올바르지 않습니다. {
+  "stack": "Error: 이메일 또는 비밀번호가 올바르지 않습니다.\n    at login (D:\\Macjin\\backend\\controllers\\userController.js:74:11)\n    at D:\\Macjin\\backend\\routes\\users.js:77:20"
+}
+2024-11-26 15:38:38 [ERROR]: Login error: 이메일 또는 비밀번호가 올바르지 않습니다. {
+  "stack": "Error: 이메일 또는 비밀번호가 올바르지 않습니다.\n    at login (D:\\Macjin\\backend\\controllers\\userController.js:69:11)\n    at D:\\Macjin\\backend\\routes\\users.js:77:20"
+}
+2024-11-26 15:38:38 [ERROR]: Login error: 이메일 또는 비밀번호가 올바르지 않습니다. {
+  "stack": "Error: 이메일 또는 비밀번호가 올바르지 않습니다.\n    at login (D:\\Macjin\\backend\\controllers\\userController.js:62:11)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at D:\\Macjin\\backend\\routes\\users.js:77:20"
+}
+2024-11-26 15:40:58 [ERROR]: Registration failed: 이미 등록된 이메일입니다. {
+  "stack": "Error: 이미 등록된 이메일입니다.\n    at register (D:\\Macjin\\backend\\controllers\\userController.js:14:11)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at D:\\Macjin\\backend\\routes\\users.js:44:20"
+}
+2024-11-26 15:43:27 [ERROR]: Setup failed: options keepalive, keepaliveinitialdelay are not supported {
+  "stack": "MongoParseError: options keepalive, keepaliveinitialdelay are not supported\n    at parseOptions (D:\\Macjin\\backend\\node_modules\\mongodb\\src\\connection_string.ts:367:11)\n    at new MongoClient (D:\\Macjin\\backend\\node_modules\\mongodb\\src\\mongo_client.ts:374:34)\n    at NativeConnection.createClient (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:312:14)\n    at NativeConnection.openUri (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\connection.js:835:34)\n    at Mongoose.connect (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\mongoose.js:447:15)\n    at Object.connect (D:\\Macjin\\backend\\tests\\security.test.js:32:22)"
+}
+2024-11-26 15:43:27 [ERROR]: MongoDB error: options keepalive, keepaliveinitialdelay are not supported {
+  "stack": "MongoParseError: options keepalive, keepaliveinitialdelay are not supported\n    at parseOptions (D:\\Macjin\\backend\\node_modules\\mongodb\\src\\connection_string.ts:367:11)\n    at new MongoClient (D:\\Macjin\\backend\\node_modules\\mongodb\\src\\mongo_client.ts:374:34)\n    at NativeConnection.createClient (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:312:14)\n    at NativeConnection.openUri (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\connection.js:835:34)\n    at Mongoose.connect (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\mongoose.js:447:15)\n    at Object.connect (D:\\Macjin\\backend\\tests\\security.test.js:32:22)"
+}
+2024-11-26 15:56:47 [ERROR]: Setup failed: Can't call `openUri()` on an active connection with different connection strings. Make sure you aren't calling `mongoose.connect()` multiple times. See: https://mongoosejs.com/docs/connections.html#multiple_connections {
+  "stack": "MongooseError: Can't call `openUri()` on an active connection with different connection strings. Make sure you aren't calling `mongoose.connect()` multiple times. See: https://mongoosejs.com/docs/connections.html#multiple_connections\n    at NativeConnection.createClient (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:239:13)\n    at NativeConnection.openUri (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\connection.js:835:34)\n    at Mongoose.connect (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\mongoose.js:447:15)\n    at Object.connect (D:\\Macjin\\backend\\tests\\profile.test.js:17:22)\n    at Promise.then.completed (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:298:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:231:10)\n    at _callCircusHook (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:281:40)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:95:7)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at run (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:71:3)\n    at runAndTransformResultsToJestFormat (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:122:21)\n    at jestAdapter (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:79:19)\n    at runTestInternal (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:367:16)\n    at runTest (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:444:34)"
+}
+2024-11-26 15:56:47 [ERROR]: MongoDB error: Can't call `openUri()` on an active connection with different connection strings. Make sure you aren't calling `mongoose.connect()` multiple times. See: https://mongoosejs.com/docs/connections.html#multiple_connections {
+  "stack": "MongooseError: Can't call `openUri()` on an active connection with different connection strings. Make sure you aren't calling `mongoose.connect()` multiple times. See: https://mongoosejs.com/docs/connections.html#multiple_connections\n    at NativeConnection.createClient (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:239:13)\n    at NativeConnection.openUri (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\connection.js:835:34)\n    at Mongoose.connect (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\mongoose.js:447:15)\n    at Object.connect (D:\\Macjin\\backend\\tests\\profile.test.js:17:22)\n    at Promise.then.completed (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:298:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:231:10)\n    at _callCircusHook (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:281:40)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:95:7)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at run (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:71:3)\n    at runAndTransformResultsToJestFormat (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:122:21)\n    at jestAdapter (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:79:19)\n    at runTestInternal (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:367:16)\n    at runTest (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:444:34)"
+}
+2024-11-26 16:05:28 [ERROR]: Login error: 이메일 또는 비밀번호가 올바르지 않습니다. {
+  "stack": "Error: 이메일 또는 비밀번호가 올바르지 않습니다.\n    at login (D:\\Macjin\\backend\\controllers\\userController.js:69:11)\n    at D:\\Macjin\\backend\\routes\\users.js:88:20"
+}
+2024-11-26 16:06:17 [ERROR]: Login error: 이메일 또는 비밀번호가 올바르지 않습니다. {
+  "stack": "Error: 이메일 또는 비밀번호가 올바르지 않습니다.\n    at login (D:\\Macjin\\backend\\controllers\\userController.js:69:11)\n    at D:\\Macjin\\backend\\routes\\users.js:88:20"
+}
+2024-11-26 16:07:32 [ERROR]: Login error: Cannot destructure property 'email' of 'req.body' as it is undefined. {
+  "stack": "TypeError: Cannot destructure property 'email' of 'req.body' as it is undefined.\n    at email (D:\\Macjin\\backend\\controllers\\userController.js:57:13)\n    at login (D:\\Macjin\\backend\\routes\\users.js:88:26)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at next (D:\\Macjin\\backend\\middleware\\validator.js:31:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at middleware (D:\\Macjin\\backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)"
+}
+2024-11-26 16:07:32 [ERROR]: Login error: Cannot read properties of undefined (reading 'status') {
+  "stack": "TypeError: Cannot read properties of undefined (reading 'status')\n    at status (D:\\Macjin\\backend\\controllers\\userController.js:95:9)\n    at login (D:\\Macjin\\backend\\routes\\users.js:88:26)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at next (D:\\Macjin\\backend\\middleware\\validator.js:31:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at middleware (D:\\Macjin\\backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)"
+}
+2024-11-26 16:08:11 [ERROR]: Login error: Cannot destructure property 'email' of 'req.body' as it is undefined. {
+  "stack": "TypeError: Cannot destructure property 'email' of 'req.body' as it is undefined.\n    at email (D:\\Macjin\\backend\\controllers\\userController.js:57:13)\n    at login (D:\\Macjin\\backend\\routes\\users.js:88:26)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at next (D:\\Macjin\\backend\\middleware\\validator.js:31:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at middleware (D:\\Macjin\\backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)"
+}
+2024-11-26 16:08:11 [ERROR]: Login error: Cannot read properties of undefined (reading 'status') {
+  "stack": "TypeError: Cannot read properties of undefined (reading 'status')\n    at status (D:\\Macjin\\backend\\controllers\\userController.js:95:9)\n    at login (D:\\Macjin\\backend\\routes\\users.js:88:26)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at next (D:\\Macjin\\backend\\middleware\\validator.js:31:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at middleware (D:\\Macjin\\backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)"
+}
+2024-11-26 16:09:24 [ERROR]: Login error: Cannot read properties of undefined (reading 'status') {
+  "stack": "TypeError: Cannot read properties of undefined (reading 'status')\n    at status (D:\\Macjin\\backend\\controllers\\userController.js:61:18)\n    at login (D:\\Macjin\\backend\\routes\\users.js:88:26)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at next (D:\\Macjin\\backend\\middleware\\validator.js:31:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at middleware (D:\\Macjin\\backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)"
+}
+2024-11-26 16:09:24 [ERROR]: Login error: Cannot read properties of undefined (reading 'status') {
+  "stack": "TypeError: Cannot read properties of undefined (reading 'status')\n    at status (D:\\Macjin\\backend\\controllers\\userController.js:101:16)\n    at login (D:\\Macjin\\backend\\routes\\users.js:88:26)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at next (D:\\Macjin\\backend\\middleware\\validator.js:31:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at middleware (D:\\Macjin\\backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)"
+}
+2024-11-26 16:23:52 [ERROR]: Auth middleware not properly loaded {
+  "authType": "undefined"
+}
+2024-11-26 17:10:50 [ERROR]: 이미 사용 중인 사용자명입니다 {
+  "name": "AppError",
+  "status": 400
+}
+2024-11-26 17:20:50 [ERROR]: Test database connection error: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string. {
+  "stack": "MongooseError: The `uri` parameter to `openUri()` must be a string, got \"undefined\". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.\n    at NativeConnection.createClient (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:225:11)\n    at NativeConnection.openUri (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\connection.js:835:34)\n    at Mongoose.connect (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\mongoose.js:447:15)\n    at connect (D:\\Macjin\\backend\\tests\\testDb.js:6:33)\n    at Object.connectDB (D:\\Macjin\\backend\\tests\\profile.test.js:9:11)\n    at Promise.then.completed (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:298:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:231:10)\n    at _callCircusHook (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:281:40)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:95:7)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at run (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:71:3)\n    at runAndTransformResultsToJestFormat (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:122:21)\n    at jestAdapter (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:79:19)\n    at runTestInternal (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:367:16)\n    at runTest (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:444:34)"
+}
+2024-11-26 17:23:44 [ERROR]: Test database connection error: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string. {
+  "stack": "MongooseError: The `uri` parameter to `openUri()` must be a string, got \"undefined\". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.\n    at NativeConnection.createClient (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:225:11)\n    at NativeConnection.openUri (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\connection.js:835:34)\n    at Mongoose.connect (D:\\Macjin\\backend\\node_modules\\mongoose\\lib\\mongoose.js:447:15)\n    at Object.connect (D:\\Macjin\\backend\\tests\\setup.js:11:20)\n    at Promise.then.completed (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:298:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (D:\\Macjin\\node_modules\\jest-circus\\build\\utils.js:231:10)\n    at _callCircusHook (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:281:40)\n    at _runTestsForDescribeBlock (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:95:7)\n    at run (D:\\Macjin\\node_modules\\jest-circus\\build\\run.js:71:3)\n    at runAndTransformResultsToJestFormat (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:122:21)\n    at jestAdapter (D:\\Macjin\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:79:19)\n    at runTestInternal (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:367:16)\n    at runTest (D:\\Macjin\\node_modules\\jest-runner\\build\\runTest.js:444:34)"
+}
+2024-11-26 18:11:11 [ERROR]: jwt malformed {
+  "name": "JsonWebTokenError",
+  "stack": "JsonWebTokenError: jwt malformed\n    at Object.<anonymous>.module.exports [as verify] (D:\\Macjin\\backend\\node_modules\\jsonwebtoken\\verify.js:70:17)\n    at verify (D:\\Macjin\\backend\\middleware\\auth.js:20:25)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at urlencodedParser (D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\types\\urlencoded.js:85:7)\n    at Layer.handle [as handle_request] (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\Macjin\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at D:\\Macjin\\backend\\node_modules\\body-parser\\lib\\read.js:137:5\n    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)\n    at invokeCallback (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:238:16)\n    at done (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (D:\\Macjin\\backend\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
