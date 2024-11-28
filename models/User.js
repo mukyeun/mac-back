@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -9,46 +8,50 @@ const userSchema = new mongoose.Schema({
     trim: true,
     lowercase: true
   },
-  password: {
-    type: String,
-    required: true,
-    minlength: 8
-  },
-  name: {
-    type: String,
-    required: true,
-    trim: true
-  },
   username: {
     type: String,
     required: true,
     unique: true,
-    trim: true
+    trim: true,
+    minlength: 4,
+    maxlength: 20
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+    minlength: 2,
+    maxlength: 50
+  },
+  bio: {
+    type: String,
+    trim: true,
+    maxlength: 200
+  },
+  profileImage: {
+    type: String
   },
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now
   }
+}, {
+  timestamps: true
 });
 
-// 비밀번호 해시화 미들웨어
-userSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) {
-    return next();
-  }
-
-  try {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
-
-// 비밀번호 비교 메서드
-userSchema.methods.comparePassword = async function(candidatePassword) {
-  return bcrypt.compare(candidatePassword, this.password);
+// 비밀번호 필드 제외
+userSchema.methods.toJSON = function() {
+  const user = this.toObject();
+  delete user.password;
+  return user;
 };
 
 const User = mongoose.model('User', userSchema);

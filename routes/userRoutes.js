@@ -1,16 +1,49 @@
 const express = require('express');
 const router = express.Router();
-const { auth } = require('../middleware/auth');
-const { updateProfile } = require('../controllers/userController');
-const { validate } = require('../middleware/validate');
-const { profileUpdateRules } = require('../validators/userValidators');
 
-// 프로필 업데이트 라우트
-router.put('/profile', 
-  auth,  // 인증 미들웨어
-  profileUpdateRules(),  // 유효성 검사 규칙
-  validate,  // 유효성 검사 실행
-  updateProfile  // 컨트롤러
+// 컨트롤러 함수들 import
+const {
+    registerUser,
+    loginUser,
+    getProfile,
+    updateProfile,
+} = require('../controllers/userController');
+
+// 미들웨어 import
+const auth = require('../middleware/auth');
+const { 
+    registerValidationRules, 
+    loginValidationRules,
+    profileUpdateValidationRules
+} = require('../middleware/userValidators');
+const { validate } = require('../middleware/validators');
+
+// 회원가입
+router.post('/register', 
+    registerValidationRules(), 
+    validate, 
+    registerUser
+);
+
+// 로그인
+router.post('/login', 
+    loginValidationRules(), 
+    validate, 
+    loginUser
+);
+
+// 프로필 조회 (인증 필요)
+router.get('/profile', 
+    auth, 
+    getProfile
+);
+
+// 프로필 수정 (인증 필요)
+router.put('/profile',
+    auth,
+    profileUpdateValidationRules(),
+    validate,
+    updateProfile
 );
 
 module.exports = router; 
