@@ -1,31 +1,31 @@
 const jwt = require('jsonwebtoken');
+const { errorResponse } = require('../utils/responseFormatter');
 const logger = require('../utils/logger');
 
 const auth = async (req, res, next) => {
   try {
+    // Authorization 헤더 확인
     const authHeader = req.header('Authorization');
-    
     if (!authHeader) {
-      logger.warn('Authentication failed: No token provided');
-      return res.status(401).json({ 
-        success: false,
-        message: '인증이 필요합니다' 
-      });
+      return res.status(401).json(errorResponse('인증 토큰이 없습니다', 401));
     }
 
-    const token = authHeader.replace('Bearer ', '');
+    // Bearer 토큰 형식 확인
+    const parts = authHeader.split(' ');
+    if (parts.length !== 2 || parts[0] !== 'Bearer') {
+      return res.status(401).json(errorResponse('잘못된 토큰 형식입니다', 401));
+    }
+
+    const token = parts[1];
+    
+    // 토큰 검증
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
+    req.user = { userId: decoded.userId };
     
-    logger.debug('Authentication successful', { userId: decoded.userId });
     next();
-  } catch (error) {
-    logger.error('Authentication error:', error);
-    
-    return res.status(401).json({ 
-      success: false,
-      message: '유효하지 않은 토큰입니다' 
-    });
+  } catch (err) {
+    logger.error('Authentication error:', err);
+    res.status(401).json(errorResponse('인증에 실패했습니다', 401));
   }
 };
 
